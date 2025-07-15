@@ -1,0 +1,24 @@
+apiVersion: v2
+name: oss-tools-grafana-stack
+description: Complete Grafana Stack for OSS Tools Portal
+type: application
+version: 0.1.0
+appVersion: "1.0"
+keywords:
+  - grafana
+  - prometheus
+  - loki
+  - monitoring
+  - observability
+home: https://flexydox.github.io
+sources:
+  - https://github.com/flexydox/flexydox.github.io
+maintainers:
+  - name: OSS Tools Portal Team
+dependencies:
+  - name: kube-prometheus-stack
+    version: "~56.0.0"
+    repository: https://prometheus-community.github.io/helm-charts
+  - name: loki-stack
+    version: "~2.10.0"
+    repository: https://grafana.github.io/helm-charts

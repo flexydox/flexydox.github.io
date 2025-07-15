@@ -1,0 +1,162 @@
+# Default values for OSS Tools Grafana Stack
+# This is a YAML-formatted file.
+
+# Global settings
+global:
+  # Shared settings across all components
+  imageRegistry: ""
+  imagePullSecrets: []
+
+# Kube Prometheus Stack configuration
+kube-prometheus-stack:
+  # Grafana configuration
+  grafana:
+    adminPassword: "admin123"
+    
+    # Service configuration
+    service:
+      type: ClusterIP
+      port: 80
+    
+    # Ingress configuration
+    ingress:
+      enabled: true
+      ingressClassName: nginx
+      annotations:
+        nginx.ingress.kubernetes.io/rewrite-target: /
+      hosts:
+        - grafana.local
+      paths:
+        - /
+      tls: []
+    
+    # Default dashboards
+    defaultDashboardsEnabled: true
+    
+    # Plugin installation
+    plugins:
+      - grafana-piechart-panel
+      - grafana-worldmap-panel
+    
+    # Grafana configuration
+    grafana.ini:
+      server:
+        domain: grafana.local
+        root_url: "http://grafana.local"
+      analytics:
+        check_for_updates: false
+        reporting_enabled: false
+      security:
+        disable_gravatar: true
+      users:
+        allow_sign_up: false
+        auto_assign_org: true
+        auto_assign_org_role: Viewer
+
+  # Prometheus configuration
+  prometheus:
+    prometheusSpec:
+      # Retention settings
+      retention: 15d
+      retentionSize: "5GB"
+      
+      # Resource settings
+      resources:
+        requests:
+          cpu: 200m
+          memory: 400Mi
+        limits:
+          cpu: 1000m
+          memory: 2Gi
+      
+      # Storage
+      storageSpec:
+        volumeClaimTemplate:
+          spec:
+            storageClassName: standard
+            accessModes: ["ReadWriteOnce"]
+            resources:
+              requests:
+                storage: 10Gi
+
+  # Alertmanager configuration
+  alertmanager:
+    alertmanagerSpec:
+      resources:
+        requests:
+          cpu: 100m
+          memory: 128Mi
+        limits:
+          cpu: 200m
+          memory: 256Mi
+
+# Loki Stack configuration
+loki-stack:
+  # Disable Grafana (using the one from prometheus stack)
+  grafana:
+    enabled: false
+  
+  # Disable Prometheus (using the one from prometheus stack)
+  prometheus:
+    enabled: false
+  
+  # Enable Promtail for log collection
+  promtail:
+    enabled: true
+    config:
+      # Log shipping configuration
+      clients:
+        - url: http://loki:3100/loki/api/v1/push
+      
+      # Scrape configs
+      scrapeConfigs:
+        - job_name: kubernetes-pods
+          kubernetes_sd_configs:
+            - role: pod
+          relabel_configs:
+            - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_scrape]
+              action: keep
+              regex: true
+            - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_path]
+              action: replace
+              target_label: __metrics_path__
+              regex: (.+)
+  
+  # Loki configuration
+  loki:
+    enabled: true
+    config:
+      # Schema configuration
+      schema_config:
+        configs:
+          - from: 2020-10-24
+            store: boltdb-shipper
+            object_store: filesystem
+            schema: v11
+            index:
+              prefix: index_
+              period: 24h
+      
+      # Storage configuration
+      storage_config:
+        boltdb_shipper:
+          active_index_directory: /loki/boltdb-shipper-active
+          cache_location: /loki/boltdb-shipper-cache
+          shared_store: filesystem
+        filesystem:
+          directory: /loki/chunks
+      
+      # Retention
+      table_manager:
+        retention_deletes_enabled: true
+        retention_period: 336h  # 14 days
+
+# Additional monitoring tools
+additionalComponents:
+  # Node Exporter
+  nodeExporter:
+    enabled: true
+  
+  # Kube State Metrics
+  kubeStateMetrics:
+    enabled: true
