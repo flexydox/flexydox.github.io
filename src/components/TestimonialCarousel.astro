@@ -1,0 +1,203 @@
+---
+// Testimonials carousel for social proof
+---
+
+<section class="bg-gray-50 py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-3xl font-heading font-bold tracking-tight text-gray-900 sm:text-4xl">
+        Loved by Development Teams
+      </h2>
+      <p class="mt-6 text-lg leading-8 text-gray-600">
+        See what teams are saying about their experience with OSS Tools Portal
+      </p>
+    </div>
+    
+    <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+      <div class="testimonial-carousel">
+        <div class="testimonial-track" id="testimonialTrack">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-slide">
+            <figure class="bg-white rounded-2xl p-8 shadow-lg">
+              <blockquote class="text-lg font-medium leading-8 text-gray-900">
+                <p>
+                  "OSS Tools Portal reduced our Kubernetes setup time from weeks to minutes. 
+                  The integrated monitoring and CI/CD workflows are exactly what our small team needed."
+                </p>
+              </blockquote>
+              <figcaption class="mt-6 flex items-center gap-x-4">
+                <div class="h-12 w-12 rounded-full bg-primary-600 flex items-center justify-center">
+                  <span class="text-white font-semibold">SJ</span>
+                </div>
+                <div>
+                  <div class="font-semibold text-gray-900">Sarah Johnson</div>
+                  <div class="text-sm text-gray-600">DevOps Engineer, TechStart</div>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+          
+          <!-- Testimonial 2 -->
+          <div class="testimonial-slide">
+            <figure class="bg-white rounded-2xl p-8 shadow-lg">
+              <blockquote class="text-lg font-medium leading-8 text-gray-900">
+                <p>
+                  "The one-command demo blew our minds. We went from zero to a fully monitored 
+                  Kubernetes environment with self-hosted runners in under 10 minutes."
+                </p>
+              </blockquote>
+              <figcaption class="mt-6 flex items-center gap-x-4">
+                <div class="h-12 w-12 rounded-full bg-green-600 flex items-center justify-center">
+                  <span class="text-white font-semibold">MC</span>
+                </div>
+                <div>
+                  <div class="font-semibold text-gray-900">Mike Chen</div>
+                  <div class="text-sm text-gray-600">Platform Lead, InnovateINC</div>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+          
+          <!-- Testimonial 3 -->
+          <div class="testimonial-slide">
+            <figure class="bg-white rounded-2xl p-8 shadow-lg">
+              <blockquote class="text-lg font-medium leading-8 text-gray-900">
+                <p>
+                  "Finally, a toolkit that doesn't require a dedicated platform team. 
+                  Our developers can now spin up environments independently."
+                </p>
+              </blockquote>
+              <figcaption class="mt-6 flex items-center gap-x-4">
+                <div class="h-12 w-12 rounded-full bg-orange-500 flex items-center justify-center">
+                  <span class="text-white font-semibold">AL</span>
+                </div>
+                <div>
+                  <div class="font-semibold text-gray-900">Alex Liu</div>
+                  <div class="text-sm text-gray-600">Engineering Manager, DataFlow</div>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+          
+          <!-- Testimonial 4 -->
+          <div class="testimonial-slide">
+            <figure class="bg-white rounded-2xl p-8 shadow-lg">
+              <blockquote class="text-lg font-medium leading-8 text-gray-900">
+                <p>
+                  "The Grafana Stack integration is phenomenal. We have complete observability 
+                  out of the box with beautiful dashboards and alerting."
+                </p>
+              </blockquote>
+              <figcaption class="mt-6 flex items-center gap-x-4">
+                <div class="h-12 w-12 rounded-full bg-purple-600 flex items-center justify-center">
+                  <span class="text-white font-semibold">RP</span>
+                </div>
+                <div>
+                  <div class="font-semibold text-gray-900">Rachel Park</div>
+                  <div class="text-sm text-gray-600">SRE, CloudScale</div>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        
+        <!-- Navigation -->
+        <div class="flex justify-center mt-8 space-x-2">
+          <button class="carousel-dot active" data-slide="0" aria-label="Go to testimonial 1"></button>
+          <button class="carousel-dot" data-slide="1" aria-label="Go to testimonial 2"></button>
+          <button class="carousel-dot" data-slide="2" aria-label="Go to testimonial 3"></button>
+          <button class="carousel-dot" data-slide="3" aria-label="Go to testimonial 4"></button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Stats -->
+    <div class="mx-auto mt-16 max-w-4xl">
+      <dl class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="text-center">
+          <dt class="text-base leading-7 text-gray-600">Setup Time</dt>
+          <dd class="text-3xl font-bold leading-9 tracking-tight text-gray-900">&lt; 10 min</dd>
+        </div>
+        <div class="text-center">
+          <dt class="text-base leading-7 text-gray-600">Components</dt>
+          <dd class="text-3xl font-bold leading-9 tracking-tight text-gray-900">20+</dd>
+        </div>
+        <div class="text-center">
+          <dt class="text-base leading-7 text-gray-600">Templates</dt>
+          <dd class="text-3xl font-bold leading-9 tracking-tight text-gray-900">15+</dd>
+        </div>
+        <div class="text-center">
+          <dt class="text-base leading-7 text-gray-600">GitHub Stars</dt>
+          <dd class="text-3xl font-bold leading-9 tracking-tight text-gray-900">1.2k+</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonial-carousel {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .testimonial-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+  }
+  
+  .testimonial-slide {
+    min-width: 100%;
+    flex-shrink: 0;
+  }
+  
+  .carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgb(209 213 219);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .carousel-dot:hover,
+  .carousel-dot.active {
+    background-color: rgb(37 99 235);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const track = document.getElementById('testimonialTrack') as HTMLElement;
+    const dots = document.querySelectorAll('.carousel-dot') as NodeListOf<HTMLButtonElement>;
+    let currentSlide = 0;
+    const totalSlides = dots.length;
+    
+    function goToSlide(slideIndex: number) {
+      currentSlide = slideIndex;
+      if (track) {
+        track.style.transform = `translateX(-${slideIndex * 100}%)`;
+      }
+      
+      // Update active dot
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === slideIndex);
+      });
+    }
+    
+    // Dot navigation
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        goToSlide(index);
+      });
+    });
+    
+    // Auto-advance carousel
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      goToSlide(currentSlide);
+    }, 5000);
+  });
+</script>

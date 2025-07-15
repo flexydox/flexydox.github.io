@@ -1,0 +1,128 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { 
+  title, 
+  description = "Comprehensive toolkit for Kubernetes environments, monitoring, and CI/CD automation. Instantly spin up dev/test/prod environments with Grafana Stack, self-hosted GitHub runners, and automated deployments."
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Open Graph / Social Media Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://flexydox.github.io/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://flexydox.github.io/og-image.png" />
+    
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://flexydox.github.io/" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content="https://flexydox.github.io/og-image.png" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    
+    <title>{title}</title>
+  </head>
+  <body class="h-full bg-white text-gray-900 font-sans">
+    <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
+      <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex items-center">
+            <a href="/" class="flex items-center space-x-2">
+              <svg width="32" height="32" viewBox="0 0 32 32" class="text-primary-600">
+                <rect width="32" height="32" rx="8" fill="currentColor"/>
+                <path d="M8 12h16v2H8v-2zm0 4h12v2H8v-2zm0 4h16v2H8v-2z" fill="white"/>
+              </svg>
+              <span class="text-xl font-heading font-bold text-gray-900">OSS Tools Portal</span>
+            </a>
+          </div>
+          
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="/docs/" class="text-gray-600 hover:text-gray-900 transition-colors">Documentation</a>
+            <a href="#demo" class="text-gray-600 hover:text-gray-900 transition-colors">Demo</a>
+            <a href="#features" class="text-gray-600 hover:text-gray-900 transition-colors">Features</a>
+            <a href="https://github.com/flexydox/flexydox.github.io" target="_blank" rel="noopener" 
+               class="flex items-center space-x-1 text-gray-600 hover:text-gray-900 transition-colors">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+          </div>
+          
+          <div class="md:hidden">
+            <button type="button" class="text-gray-600 hover:text-gray-900" aria-label="Open menu">
+              <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <main class="pt-16">
+      <slot />
+    </main>
+    
+    <footer class="bg-gray-900 text-white">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="col-span-1 md:col-span-2">
+            <div class="flex items-center space-x-2 mb-4">
+              <svg width="32" height="32" viewBox="0 0 32 32" class="text-primary-500">
+                <rect width="32" height="32" rx="8" fill="currentColor"/>
+                <path d="M8 12h16v2H8v-2zm0 4h12v2H8v-2zm0 4h16v2H8v-2z" fill="white"/>
+              </svg>
+              <span class="text-xl font-heading font-bold">OSS Tools Portal</span>
+            </div>
+            <p class="text-gray-400 max-w-md">
+              Empowering small-to-medium IT departments with instant Kubernetes environments, 
+              monitoring stacks, and automated CI/CD workflows.
+            </p>
+          </div>
+          
+          <div>
+            <h3 class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">Resources</h3>
+            <ul class="space-y-2">
+              <li><a href="/docs/" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+              <li><a href="/docs/quick-start/" class="text-gray-400 hover:text-white transition-colors">Quick Start</a></li>
+              <li><a href="/docs/recipes/" class="text-gray-400 hover:text-white transition-colors">Recipes</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">Community</h3>
+            <ul class="space-y-2">
+              <li><a href="https://github.com/flexydox/flexydox.github.io" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-colors">GitHub</a></li>
+              <li><a href="https://github.com/flexydox/flexydox.github.io/issues" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-colors">Issues</a></li>
+              <li><a href="https://github.com/flexydox/flexydox.github.io/discussions" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-colors">Discussions</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="mt-8 pt-8 border-t border-gray-800">
+          <p class="text-center text-gray-400">
+            © 2024 OSS Tools Portal. Open source under MIT License.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,54 +1,14 @@
 ---
-import "../styles/main.scss";
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import CTA from '../components/CTA.astro';
+import TestimonialCarousel from '../components/TestimonialCarousel.astro';
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Alata&family=Average+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <title>Flexydox</title>
-  </head>
-  <body>
-    <header>
-      <img class="logo" src="/images/flexydox-logo.svg" alt="Flexydox logo" />
-      <div class="header-links">
-        <a href="/docs/usage">Documentation</a>
-        <a href="https://github.com/flexydox/flexydox">
-          <img class="github-logo" src="/images/github-logo.svg" />
-        </a>
-      </div>
-    </header>
-    <section class="main-content">
-      <section class="page-1">
-        <section class="title">
-          <div class="title-panel">
-            <h1>
-              Flexy<span class="alternate">dox</span>
-            </h1>
-          </div>
-        </section>
-
-        <section class="intro-text">
-          Effortlessly generate unified API documentation
-          <br />from multiple REST and GraphQL endpoints
-        </section>
-        <section class="cta">
-          <a href="/docs/usage"><button>Get Started</button></a>
-        </section>
-      </section>
-
-      <section class="intro-video">
-        <video class="placeholder-2" controls src="/images/video.mp4"> </video>
-      </section>
-    </section>
-  </body>
-</html>
+<Layout title="OSS Tools Portal - Kubernetes DevOps Toolkit">
+  <Hero />
+  <FeatureGrid />
+  <TestimonialCarousel />
+  <CTA />
+</Layout>

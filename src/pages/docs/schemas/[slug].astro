@@ -4,7 +4,7 @@ import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
 import { Marked } from "marked";
 import { sidebarConfig } from "../sidebar";
 import markedShiki from "marked-shiki";
-import { getHighlighter } from "shiki";
+import { createHighlighter } from "shiki";
 import {
   transformerNotationDiff,
   transformerNotationHighlight,
@@ -15,7 +15,7 @@ import {
   transformerMetaWordHighlight
 } from "@shikijs/transformers";
 
-const highlighter = await getHighlighter({
+const highlighter = await createHighlighter({
   // In this case, we include the "js" language specifier to ensure that
   // Shiki applies the appropriate syntax highlighting for Markdown code
   // blocks.
@@ -73,6 +73,6 @@ const content = marked.parse(markdown);
     display: none;
   }
 </style>
-<StarlightPage sidebar={sidebarConfig} frontmatter={{ title: pageData?.title }}>
+<StarlightPage sidebar={sidebarConfig} frontmatter={{ title: pageData?.title || 'Schema Documentation' }}>
   <article set:html={content} />
 </StarlightPage>

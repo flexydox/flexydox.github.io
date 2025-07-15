@@ -1,26 +1,26 @@
 export const sidebarConfig = [
-  { label: "Home", href: "/" },
+  { label: "Home", link: "/" },
   {
     label: "Getting Started",
     items: [
-      { label: "Core Concepts", href: "/docs/core-concepts" },
-      { label: "Usage", href: "/docs/usage" },
-      { label: "Roadmap", href: "/docs/roadmap" },
-      { label: "Examples", href: "https://examples.flexydox.org", attrs: { target: '_blank', style: 'font-style: italic' }, },
+      { label: "Core Concepts", link: "/docs/core-concepts" },
+      { label: "Usage", link: "/docs/usage" },
+      { label: "Roadmap", link: "/docs/roadmap" },
+      { label: "Examples", link: "https://examples.flexydox.org", attrs: { target: '_blank', style: 'font-style: italic' }, },
       
     ]
   },
   {
     label: "Configuration",
     items: [
-      { label: "Configuration file", href: "/docs/configuration" },
-      { label: "CLI reference", href: "/docs/cli" }
+      { label: "Configuration file", link: "/docs/configuration" },
+      { label: "CLI reference", link: "/docs/cli" }
     ]
   },
   {
     label: "Development",
     items: [
-      { label: "Development Guide", href: "/docs/development" }
+      { label: "Development Guide", link: "/docs/development" }
     ]
   }
 ];
