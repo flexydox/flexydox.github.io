@@ -6,12 +6,12 @@ export interface Props {
 
 const { 
   title, 
-  description = "Comprehensive toolkit for Kubernetes environments, monitoring, and CI/CD automation. Instantly spin up dev/test/prod environments with Grafana Stack, self-hosted GitHub runners, and automated deployments."
+  description = "Komplexní nástroje pro Kubernetes prostředí, monitoring a automatizaci CI/CD. Okamžitě spusťte dev/test/prod prostředí s Grafana Stack, vlastními GitHub runners a automatizovanými deploymenty."
 } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="cs" class="h-full">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -21,13 +21,13 @@ const {
     
     <!-- Open Graph / Social Media Tags -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://flexydox.github.io/" />
+    <meta property="og:url" content="https://flexydox.github.io/cs/" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content="https://flexydox.github.io/og-image.png" />
     
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://flexydox.github.io/" />
+    <meta property="twitter:url" content="https://flexydox.github.io/cs/" />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content="https://flexydox.github.io/og-image.png" />
@@ -44,7 +44,7 @@ const {
       <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center py-4">
           <div class="flex items-center">
-            <a href="/" class="flex items-center space-x-2">
+            <a href="/cs/" class="flex items-center space-x-2">
               <svg width="32" height="32" viewBox="0 0 32 32" class="text-primary-600">
                 <rect width="32" height="32" rx="8" fill="currentColor"/>
                 <path d="M8 12h16v2H8v-2zm0 4h12v2H8v-2zm0 4h16v2H8v-2z" fill="white"/>
@@ -54,9 +54,9 @@ const {
           </div>
           
           <div class="hidden md:flex items-center space-x-8">
-            <a href="/docs/" class="text-gray-600 hover:text-gray-900 transition-colors">Documentation</a>
-            <a href="#demo" class="text-gray-600 hover:text-gray-900 transition-colors">Demo</a>
-            <a href="#features" class="text-gray-600 hover:text-gray-900 transition-colors">Features</a>
+            <a href="/cs/docs/" class="text-gray-600 hover:text-gray-900 transition-colors">Dokumentace</a>
+            <a href="/cs#demo" class="text-gray-600 hover:text-gray-900 transition-colors">Demo</a>
+            <a href="/cs#features" class="text-gray-600 hover:text-gray-900 transition-colors">Funkce</a>
             <a href="https://github.com/flexydox/flexydox.github.io" target="_blank" rel="noopener" 
                class="flex items-center space-x-1 text-gray-600 hover:text-gray-900 transition-colors">
               <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
@@ -72,13 +72,13 @@ const {
                 onchange="switchLanguage(this.value)"
               >
                 <option value="en">🇺🇸 EN</option>
-                <option value="cs">🇨🇿 CZ</option>
+                <option value="cs" selected>🇨🇿 CZ</option>
               </select>
             </div>
           </div>
           
           <div class="md:hidden">
-            <button type="button" class="text-gray-600 hover:text-gray-900" aria-label="Open menu">
+            <button type="button" class="text-gray-600 hover:text-gray-900" aria-label="Otevřít menu">
               <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
               </svg>
@@ -104,32 +104,32 @@ const {
               <span class="text-xl font-heading font-bold">Flexydox</span>
             </div>
             <p class="text-gray-400 max-w-md">
-              We run and maintain your K8s infrastructure, CI/CD, Grafana, so you can focus on developing your product.
+              Spravujeme a udržujeme vaši K8s infrastrukturu, CI/CD, Grafana, takže se můžete soustředit na vývoj vašeho produktu.
             </p>
           </div>
           
           <div>
-            <h3 class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">Resources</h3>
+            <h3 class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">Zdroje</h3>
             <ul class="space-y-2">
-              <li><a href="/docs/" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
-              <li><a href="/docs/quick-start/" class="text-gray-400 hover:text-white transition-colors">Quick Start</a></li>
-              <li><a href="/docs/recipes/" class="text-gray-400 hover:text-white transition-colors">Recipes</a></li>
+              <li><a href="/cs/docs/" class="text-gray-400 hover:text-white transition-colors">Dokumentace</a></li>
+              <li><a href="/cs/docs/quick-start/" class="text-gray-400 hover:text-white transition-colors">Rychlý start</a></li>
+              <li><a href="/cs/docs/recipes/" class="text-gray-400 hover:text-white transition-colors">Recepty</a></li>
             </ul>
           </div>
           
           <div>
-            <h3 class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">Community</h3>
+            <h3 class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">Komunita</h3>
             <ul class="space-y-2">
               <li><a href="https://github.com/flexydox/flexydox.github.io" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-colors">GitHub</a></li>
-              <li><a href="https://github.com/flexydox/flexydox.github.io/issues" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-colors">Issues</a></li>
-              <li><a href="https://github.com/flexydox/flexydox.github.io/discussions" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-colors">Discussions</a></li>
+              <li><a href="https://github.com/flexydox/flexydox.github.io/issues" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-colors">Problémy</a></li>
+              <li><a href="https://github.com/flexydox/flexydox.github.io/discussions" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition-colors">Diskuze</a></li>
             </ul>
           </div>
         </div>
         
         <div class="mt-8 pt-8 border-t border-gray-800">
           <p class="text-center text-gray-400">
-            © 2024 Flexydox. Open source under MIT License.
+            © 2024 Flexydox. Open source pod MIT licencí.
           </p>
         </div>
       </div>
@@ -141,7 +141,7 @@ const {
         let newPath;
         
         if (language === 'cs') {
-          if (currentPath === '/cs' || currentPath === '/cs/') {
+          if (currentPath === '/cs' || currentPath === '/cs/' || currentPath.startsWith('/cs/')) {
             return; // Already on Czech version
           } else if (currentPath === '/') {
             newPath = '/cs';
